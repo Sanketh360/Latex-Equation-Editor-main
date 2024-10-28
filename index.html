@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>Latex Equation Editor</title>
+</head>
+<body>
+    <header class="Navbar">
+        <p class="logo">Latex Equation Editor</p>
+        <input type="checkbox" name="" class="btn"/>
+        <!-- <div class="nav">
+            <ol>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ol>
+        </div> -->
+
+        <nav>
+            
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                
+                <li><a href="#contact">Contact</a></li>
+                <span></span>
+          
+        </nav>
+    </header>
+    <section class="Intro"id="home">
+        <h1>Introduction</h1>
+        <p style="color: white;">A LaTeX Equation Editor refers to tools or features within text editors, document processors, or online platforms that enable users to input, edit, and display mathematical equations using LaTeX syntax. LaTeX, a typesetting system, utilizes a specific syntax for representing mathematical symbols and equations.</p>
+    </section>
+    <div class="box">
+      <div class="Outertoolbar">
+        <section class="services"id="services">
+        <h1>Equation Editor</h1>
+          <!-- Replace the buttons in the toolbar with input elements -->
+          <div class="toolbar">
+            <input type="button" value="Font Size" onclick="changeFontSize()">
+            <input type="button" value="Font Color" onclick="changeFontColor()">
+            <input type="button" value="Clear" onclick="clearLatex()">
+            <input type="button" value="Font Style" onclick="changeFontStyle()">
+            <input type="button" value="Undo" onclick="undo()">
+            <input type="button" value="Redo" onclick="redo()">
+        </div>
+        
+
+      </div>
+        <!-- <div class="workspace"> -->
+            <div class="latex_eq">
+                <div class="latex_eq1">
+                    <button onclick="binaryDisplay()" id="binaryOperator">Binary Operator</button>
+                    <button onclick="caseDisplay()" id="cases">Cases</button>
+                    <button onclick="fractionDisplay()" id="fraction">Fraction</button>
+                    <button onclick="greekLettersDisplay()" id="greekLetters">Greek letters</button>
+                    <button onclick="integralDisplay()" id="integtral">Integral</button>
+                    <button onclick="limitsDisplay()" id="limits">Limits</button>
+                    <button onclick="largeOpereatorDisplay()" id="largerOperator">Large Operator</button>
+                    <button onclick="subSuperDisplay()" id="subSuper">Sub/Super</button>
+                    <button onclick="radicals()" id="radicals">radicals</button>
+                    <button onclick="relation()" id="relation">Relation</button>
+                    <button onclick="trig()" id="trig">Trig funcs</button>
+                    <button onclick="hyp()" id="hyp">Hyp.funcs</button>
+                    <button onclick="exp()" id="exp">Exp/Log</button>
+                    <button onclick="other()" id="other">Other notations</button>
+                    <button onclick="accents()" id="accents">Accents</button>+
+                    <button onclick="arrow()" id="arrow">Arrows</button>
+                    <button onclick="bracket()" id="bracket">Brackets</button>
+                </div>
+                <div class="latex_eq_display" id="IconsContainer">
+                    <!-- <img  src="images/Binary ops/+.png" alt="minus" class="icon" onclick="updateLatex('+')" >
+                    <img src="images/Cases/x=abc.png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/Fractions/d2f(x).png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/greek letters/alpha.png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/integral/baf(x).png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/large ops/bigcap(0_n).png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/Operators/f.png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/Sub_Super/Cab.png" alt="" class="icon" onclick="updateLatex('+')"> -->
+                </div>  
+            </div>
+            <div class="latex_code_outer">
+            <div class="latex_code">
+                <textarea class="display" id="latexOutput"  ></textarea>
+                
+            </div>
+            <div class="Outerlatex_display">
+                <pre class="latex_display" id="codeOutput" contenteditable="true"></pre>
+           </div>
+        </div>
+        <button class="download" onclick="downloadImage()">Download Image</button>
+        <section class="About"id="about">
+            <h1>About Equation Editor</h1>
+            <p>Welcome to Latex Equation Editor, your go-to platform for effortlessly creating and rendering beautiful mathematical equations using LaTeX syntax. Whether you're a student, educator, researcher, or anyone who deals with mathematical expressions, our editor simplifies the process of expressing complex formulas with precision and clarity.</p>
+            <h2>Our Mission</h2>
+            <p>At Latex Equation Editor, we are on a mission to empower individuals in the academic and scientific communities by providing a user-friendly and efficient tool for creating mathematical content. We believe that expressing mathematical ideas should be intuitive and accessible to everyone.</p>
+        </section>
+        <section class="Contacts" id="contact">
+            <h1 class="contactheader"><span style="color: aliceblue;">Contact Us</span></h1>
+            <main>
+                <form action="Submit_form.php"method=post>
+                    <label for="Name"><span style="color: aliceblue;">Your Name:</span></label>
+                    <input type="text" id="name" name="Name" required>
+                    <label for="Email"><span style="color: aliceblue;">Your Email:</span></label>
+                    <input type="Email" id="email" name="Email"required>
+                    <label for="message"><span style="color: aliceblue;">Your Feedback</span></label>
+                    <textarea id="Message" name="Message" row="4" column="4" required></textarea>
+                    <button type="Submit">Submit</button>
+                </form>
+            </main>
+            <footer>
+                <p>Contact Us at :<a href="chronicals"><span style="color: aqua;">CHRONICALS.io</span></a></p>
+            </footer>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
